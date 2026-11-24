@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    outline: 3px solid #A895E6;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  ::selection {
+    background: #DDD3F8;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 text-sm font-bold transition duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-lav-600 text-white shadow-soft hover:bg-lav-700 active:scale-[.98];
+  }
+  .btn-soft {
+    @apply btn bg-lav-100 text-lav-700 hover:bg-lav-200 active:scale-[.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:bg-lav-50;
+  }
+  .btn-danger {
+    @apply btn bg-blush-100 text-blush-600 hover:bg-blush-200 active:scale-[.98];
+  }
+  .input {
+    @apply w-full rounded-2xl border border-lav-200 bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink-mute transition focus:border-lav-400 focus:outline-none focus:ring-4 focus:ring-lav-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-bold text-ink;
+  }
+  .panel {
+    @apply rounded-3xl border border-lav-100 bg-white p-6 shadow-soft;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
